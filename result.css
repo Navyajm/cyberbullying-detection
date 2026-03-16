@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f051d, #2b1055);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.card {
+  background: #1c1033;
+  width: 420px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+h2 {
+  text-align: center;
+  color: #b983ff;
+}
+
+.label {
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.comment-box {
+  background: #2a1a4a;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.result-box {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cyber {
+  color: #ff4d6d;
+}
+
+.safe {
+  color: #4dff88;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.report {
+  background: #ff4d6d;
+  color: white;
+}
+
+.close {
+  background: #444;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}

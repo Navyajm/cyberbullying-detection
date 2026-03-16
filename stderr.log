@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\adith\OneDrive\Documents\Final-Year-Project\app.py", line 401, in <module>
+    print(f"OpenRouter API: {'\u2713' if OPENROUTER_API_KEY else '\u2717'}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adith\AppData\Local\Python\pythoncore-3.14-64\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 16: character maps to <undefined>
