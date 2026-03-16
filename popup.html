@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Panel: Detector View -->
+    <div class="panel" id="detectorPanel">
+        <div class="panel-header">
+            <div class="panel-title">CyberGuard</div>
+            <div class="header-icons">
+                <div class="icon-btn" id="openDashboard" title="Dashboard">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="3" width="7" height="7" rx="1" stroke-width="2"></rect>
+                        <rect x="14" y="3" width="7" height="7" rx="1" stroke-width="2"></rect>
+                        <rect x="3" y="14" width="7" height="7" rx="1" stroke-width="2"></rect>
+                        <rect x="14" y="14" width="7" height="7" rx="1" stroke-width="2"></rect>
+                    </svg>
+                </div>
+                <div class="icon-btn" id="openSettings" title="Settings">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="3" stroke-width="2"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke-width="2"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Real-time Scanning</div>
+            <div class="status-box">
+                <div class="status-info">
+                    <div class="status-label">Status</div>
+                    <div class="status-value" id="scanningStatus">Scanning active chats</div>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="scanningToggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Detected Content</div>
+            <div class="detected-list" id="detectedList">
+                <div class="empty-state">No cyberbullying detected yet</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Quick Settings</div>
+            <div class="settings-list">
+                <div class="settings-item" id="languageSettings">
+                    <span class="settings-label">Language</span>
+                    <div class="settings-value">
+                        Hinglish
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <polyline points="9 18 15 12 9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="settings-item" id="reportIssue">
+                    <span class="settings-label">Report an Issue</span>
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <polyline points="9 18 15 12 9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="version-footer">CyberGuard v1.0.0</div>
+    </div>
+
+    <!-- Dashboard Panel -->
+    <div class="panel hidden" id="dashboardPanel">
+        <div class="panel-header">
+            <div class="icon-btn back-btn" id="backFromDashboard" title="Back">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <polyline points="15 18 9 12 15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                </svg>
+            </div>
+            <div class="panel-title">Dashboard</div>
+            <div class="icon-btn" id="openSettingsFromDashboard" title="Settings">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="3" stroke-width="2"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke-width="2"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Analyzed</div>
+                <div class="stat-value" id="totalAnalyzed">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Flagged</div>
+                <div class="stat-value" id="totalFlagged">0</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Analysis Trends</div>
+            <div class="trend-header">
+                <span class="trend-label">Detections This Week</span>
+                <span class="trend-change">0 flagged</span>
+            </div>
+            <div class="chart-container">
+                <canvas id="trendChart" class="chart-canvas"></canvas>
+            </div>
+            <div class="chart-days">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+            </div>
+        </div>
+
+        <div class="version-footer">CyberGuard v1.0.0</div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div class="panel hidden" id="settingsPanel">
+        <div class="panel-header">
+            <div class="icon-btn back-btn" id="backFromSettings" title="Back">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <polyline points="15 18 9 12 15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                </svg>
+            </div>
+            <div class="panel-title">Settings</div>
+            <div style="width: 32px;"></div>
+        </div>
+
+        <div class="settings-section">
+            <div class="settings-section-title">Language</div>
+            <div class="settings-item" id="languageSettingsModal">
+                <span class="settings-label">Analysis Language</span>
+                <div class="settings-value">
+                    Hinglish
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <polyline points="9 18 15 12 9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <div class="settings-section-title">Feedback</div>
+            <div class="settings-item" id="reportFalsePositive">
+                <span class="settings-label">Report False Positive</span>
+                <svg viewBox="0 0 24 24" fill="none">
+                    <polyline points="9 18 15 12 9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                </svg>
+            </div>
+            <div class="settings-item" id="suggestCorrection">
+                <span class="settings-label">Suggest Correction</span>
+                <svg viewBox="0 0 24 24" fill="none">
+                    <polyline points="9 18 15 12 9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                </svg>
+            </div>
+        </div>
+
+        <div class="version-footer">CyberGuard v1.0.0</div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
