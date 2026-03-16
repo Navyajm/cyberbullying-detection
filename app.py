@@ -523,11 +523,15 @@ if __name__ == "__main__":
     print(f"OpenRouter API: {'YES' if OPENROUTER_API_KEY else 'NO'}")
     load_svm()
     load_muril()
+
     priority = []
     if muril_model: priority.append("MuRIL")
     if svm_model: priority.append("SVM")
     if OPENROUTER_API_KEY: priority.append("LLM (Hybrid)")
     priority.append("Keywords")
+
     print(f"Detection priority: {' > '.join(priority)}")
     print()
-    app.run(debug=True, port=5000)
+
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
